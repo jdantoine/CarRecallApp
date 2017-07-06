@@ -1,0 +1,259 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+    <title>Car Recall Finder App</title>
+    <!-- Loading third party fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400|" rel="stylesheet" type="text/css">
+    <link href="~/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="~/dummy/CarFinder Favicon32.png" sizes="32x32" />
+    <!-- Loading main css file -->
+    <link href="@Url.Content("~/jqx/styles/jqx.base.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/jqx/styles/jqx.classic.css")" rel="stylesheet" type="text/css" />
+    <link href="~/Content/style.css" rel="stylesheet" />
+    
+    <link href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+    <!--[if lt IE 9]>
+    <script src="js/ie-support/html5.js"></script>
+    <script src="js/ie-support/respond.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div id="site-content">
+        <div class="site-header">
+            <div class="container">
+                <a href="index.html" id="branding">
+                    <img src="~/dummy/carfinder.png" style="height:40px;" alt="" class="logo">
+                    <div class="logo-text">
+                        <h1 class="site-title">Car Recall Finder</h1>
+                        <small class="site-description">Find Recall Info About Your Car</small>
+                    </div>
+                </a> <!-- #branding -->
+                <!-- Default snippet for navigation -->
+                <div class="main-navigation">
+                    <button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
+                    <ul class="menu">
+                        <li class="menu-item current-menu-item"><a href="http://jantoine-carfinder.azurewebsites.net/">Home</a></li>
+                        <li class="menu-item"><a href="http://jantoine-carfinder.azurewebsites.net/Swagger/ui/index">API</a></li>
+                        @*<li class="menu-item"><a href="about.html">About</a></li>
+                            <li class="menu-item"><a href="project.html">our Projects</a></li>
+                            <li class="menu-item"><a href="contact.html">Contact</a></li>*@
+                    </ul> <!-- .menu -->
+                </div> <!-- .main-navigation -->
+                <div class="mobile-navigation"></div>
+            </div>
+        </div> <!-- .site-header -->
+        <div class="hero hero-slider">
+            <ul class="slides">
+                <li data-bg-image="/dummy/bugatti-veyron-super-sport-.jpg">
+                    <img src="" />
+                </li>
+
+            </ul> <!-- .slides -->
+        </div> <!-- .hero-slider -->
+        <main class="main-content">
+            <div class="fullwidth-block latest-projects-section">
+                <div class="container">
+
+                    <h2 class="section-title">Search for your car!</h2>
+
+                    <div class="row">
+                        <div class="col-sm-6 col-md-3">
+                            <div class="project">
+                                <h3 class="project-title"><a href="#">enter a year</a></h3>
+                                <p>Enter a year of the car that you are looking for.</p>
+                                <select type="number" id="carYear" style="width:200px;"></select>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <div class="project">
+                                <h3 class="project-title"><a href="#">enter the car make</a></h3>
+                                <p>Enter the type of make of the car.</p>
+                                <select type="text" id="carMake" style="width:200px;"></select>
+                                <!--<a href="#" class="more-link"><img src="images/arrow.png" alt=""></a>-->
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <div class="project">
+                                <h3 class="project-title"><a href="#">enter the car model</a></h3>
+                                <p>Enter the type of model that you are looking for.</p>
+                                <select type="text" id="carModel" style="width:200px;"></select>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <div class="project">
+                                <h3 class="project-title"><a href="#">enter the car trim</a></h3>
+                                <p>Enter the trim of the car you are looking for.</p>
+                                <select type="text" id="carTrim" style="width:200px;"></select>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <button class="car-info" onclick="carRecall()">Get Car Recall Info</button>
+                        </div>
+
+                        </div> <!-- .row -->
+                <br /><br />
+                    <div id="rcMsg"></div>
+                    <div id="images"></div> <br />
+                    
+                    <div id="jqxGrid"></div>
+                    <div id="more"> </div>
+
+                </div> <!-- .container -->
+            </div> <!-- .fullwidth-block.latest-projects-section -->
+
+
+
+
+        </main> <!-- .main-content -->
+        <footer class="site-footer">
+            <div class="container">
+                <div>
+                    <address>
+                        <p class="text-center" style="color:#262626">
+                            Created using ASP.NET MVC, C#, JS, Bootstrap, EF/SQL Server<br>
+                            © 2017 - Judner Antoine
+                        </p>
+                    </address>
+
+                </div> <!-- .pull-left -->
+
+            </div> <!-- .container -->
+        </footer> <!-- .site-footer -->
+    </div>
+
+    <script src="~/Scripts/jquery-1.11.1.min.js"></script>
+    <script src="~/Scripts/plugins.js"></script>
+    <script src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    @*<link href="~/Content/DataTables/css/jquery.dataTables.min.css" rel="stylesheet" />
+        <link href="~/Content/DataTables/css/dataTables.bootstrap.min.css" rel="stylesheet" />*@
+    <script src="~/Scripts/app.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable();
+            $.getJSON("http://jantoine-carfinder.azurewebsites.net/api/cars/GetDistinctCarYears", function (data)
+            {
+                $.each(data, function(key, val) {
+                    $("#carYear").append("<option value = '" + val + "'>" + val + "</option>");
+                });
+            })
+            $("#carYear").change(function () {
+                var year = $("#carYear").val();
+                $("#carMake").html("");
+                $.getJSON("http://jantoine-carfinder.azurewebsites.net/api/cars/GetUniqueMakes?year=" + year, function (data)
+                {
+                    $.each(data, function (key, val) {
+                        $("#carMake").append("<option value = '" + val + "'>" + val + "</option>");
+                    });
+                })
+            })
+            $("#carMake").change(function () {
+                var make = $("#carMake").val();
+                var year = $("#carYear").val();
+                $("#carModel").html("");
+                $.getJSON("http://jantoine-carfinder.azurewebsites.net/api/cars/GetUniqueModelsByMake?year=" + year + "&make=" + make, function (data)
+                {
+                    $.each(data, function (key, val) {
+                        $("#carModel").append("<option value = '" + val + "'>" + val + "</option>");
+                    });
+                })
+            })
+            $("#carModel").change(function () {
+                var make = $("#carMake").val();
+                var year = $("#carYear").val();
+                var model = $("#carModel").val();
+                $("#carTrim").html("");
+                $.getJSON("http://jantoine-carfinder.azurewebsites.net/api/cars/GetUniqueTrimsByMakeModelYear?year=" + year + "&make=" + make + "&model=" + model, function (data)
+                {
+                    $.each(data, function (key, val) {
+                        $("#carTrim").append("<option value = '" + val + "'>" + val + "</option>");
+                    });
+                });
+            });
+           
+        });
+
+
+
+    </script>
+
+
+    <script src="@Url.Content("~/jqx/jqxcore.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/jqx/jqxgrid.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/jqx/jqxbuttons.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/jqx/jqxmenu.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/jqx/jqxgrid.selection.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/jqx/jqxscrollbar.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/jqx/jqxdata.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/jqx/jqxgrid.columnsresize.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/jqx/jqxgrid.columnsreorder.js")" type="text/javascript"></script>
+
+    <script>
+        function carRecall() {
+            var year = $('#carYear').val();
+            var make = $('#carMake').val();
+            var model = $('#carModel').val();
+            var trim = $('#carTrim').val();
+
+            $.ajax({
+                type: "GET",
+                url: "http://jantoine-carfinder.azurewebsites.net/carRecall?year=" + year + "&make=" + make + "&model=" + model + "&trim=" + trim,
+                dataType: "json",
+                success: function (data) {
+                    var appendData = "<h3> Recall Data for " + year + " " + make + " " + model + " " + trim + "</h3>";
+                    var appendIMG = "<h3> Images </h3>"
+                    CreateGrid(data.Recalls.Results);
+                    $.each(data.ImgSearchResult, function (key, value) {
+                        appendIMG += "<img height='300' width='350' class='img-responsive' style='display:inline-block' src='" + value.ImageLink + "'/>";
+                    })
+                    $('#rcMsg').html(appendData);
+                    $('#images').html(appendIMG)
+                }
+            })
+        }
+        
+        function CreateGrid(data) {
+            var source = {
+                localdata: data,
+                datatype: "array",
+                datafields:
+                [
+                 { name: 'Component', type: 'string' },
+               
+                 { name: 'Summary', type: 'string' },
+                  { name: 'Conequence', type: 'string' },
+                 { name: 'Notes', type: 'string' },
+                 { name: 'Remedy', type: 'string' },
+                ]
+            };
+
+            var dataAdapter = new $.jqx.dataAdapter(source);
+            $("#jqxGrid").jqxGrid(
+                {
+                    width: 1100,
+                    source: dataAdapter,
+                    columnsresize: true,
+                    columnsreorder:true,
+                    
+                    columns: [
+                        { text: 'Component', datafield: 'Component', width: 100 },
+                        
+                        { text: 'Summary', datafield: 'Summary', width: 300 },
+                        { text: 'Consequence', datafield: 'Conequence', width: 200 },
+                        { text: 'Notes', datafield: 'Notes', width: 300 },
+                        { text: 'Remedy', datafield: 'Remedy', width: 300 },
+                    ]
+                });
+
+        }
+    </script>
+
+
+
+</body>
+</html>

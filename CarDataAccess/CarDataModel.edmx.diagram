@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b06949ae4c20470d87134d67d570e57c" Name="Diagram1">
+        <EntityTypeShape EntityType="CarModel.BodyStyle" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarModel.Car" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarModel.DriveType" Width="1.5" PointX="0.75" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarModel.EngineFuel" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarModel.EnginePosition" Width="1.5" PointX="0.75" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarModel.EngineType" Width="1.5" PointX="0.75" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarModel.Make" Width="1.5" PointX="0.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarModel.sysdiagram" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarModel.TransmissionType" Width="1.5" PointX="0.75" PointY="20.125" IsExpanded="true" />
+        <AssociationConnector Association="CarModel.FK_BodyStyles_id" ManuallyRouted="false" />
+        <AssociationConnector Association="CarModel.FK_DriveTypes_id" ManuallyRouted="false" />
+        <AssociationConnector Association="CarModel.FK_EngineFuels_id" ManuallyRouted="false" />
+        <AssociationConnector Association="CarModel.FK_EnginePositions_id" ManuallyRouted="false" />
+        <AssociationConnector Association="CarModel.FK_EngineTypes_id" ManuallyRouted="false" />
+        <AssociationConnector Association="CarModel.FK_Makes_id" ManuallyRouted="false" />
+        <AssociationConnector Association="CarModel.FK_TransmissionTypes_id" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

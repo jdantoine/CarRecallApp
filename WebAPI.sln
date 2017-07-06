@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI", "WebAPI\WebAPI.csproj", "{B600F2B2-DBE6-48CD-A0C7-E77D4BB7D0AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarDataAccess", "CarDataAccess\CarDataAccess.csproj", "{5DD623F2-B510-4E9E-A3F6-D83E38193A19}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B600F2B2-DBE6-48CD-A0C7-E77D4BB7D0AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B600F2B2-DBE6-48CD-A0C7-E77D4BB7D0AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B600F2B2-DBE6-48CD-A0C7-E77D4BB7D0AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B600F2B2-DBE6-48CD-A0C7-E77D4BB7D0AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DD623F2-B510-4E9E-A3F6-D83E38193A19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DD623F2-B510-4E9E-A3F6-D83E38193A19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DD623F2-B510-4E9E-A3F6-D83E38193A19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DD623F2-B510-4E9E-A3F6-D83E38193A19}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
